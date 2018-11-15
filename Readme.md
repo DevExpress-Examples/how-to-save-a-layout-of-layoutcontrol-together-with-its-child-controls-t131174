@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* **[Main.cs](./CS/WindowsApplication3/Main.cs) (VB: [Main.vb](./VB/WindowsApplication3/Main.vb))**
+* [Serializer.cs](./CS/WindowsApplication3/Serializer.cs) (VB: [Serializer.vb](./VB/WindowsApplication3/Serializer.vb))
+<!-- default file list end -->
 # How to save a layout of LayoutControl together with its child controls
 
 
