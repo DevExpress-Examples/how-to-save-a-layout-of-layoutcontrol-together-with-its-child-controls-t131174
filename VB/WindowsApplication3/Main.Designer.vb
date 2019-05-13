@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace DXSample
+﻿Namespace DXSample
 	Partial Public Class Main
 		''' <summary>
 		''' Required designer variable.
@@ -30,36 +28,36 @@ Namespace DXSample
 			Me.imageList1 = New System.Windows.Forms.ImageList(Me.components)
 			Me.defaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
 			Me.layoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+			Me.buttonEdit1 = New DevExpress.XtraEditors.ButtonEdit()
 			Me.memoEdit1 = New DevExpress.XtraEditors.MemoEdit()
 			Me.textEdit2 = New DevExpress.XtraEditors.TextEdit()
 			Me.simpleButton4 = New DevExpress.XtraEditors.SimpleButton()
 			Me.simpleButton3 = New DevExpress.XtraEditors.SimpleButton()
-			Me.buttonEdit1 = New DevExpress.XtraEditors.ButtonEdit()
 			Me.layoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
 			Me.layoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
 			Me.layoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
 			Me.layoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
 			Me.layoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+			Me.layoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
 			Me.simpleButton2 = New DevExpress.XtraEditors.SimpleButton()
 			Me.simpleButton1 = New DevExpress.XtraEditors.SimpleButton()
 			Me.layoutControl2 = New DevExpress.XtraLayout.LayoutControl()
 			Me.layoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
 			Me.simpleLabelItem1 = New DevExpress.XtraLayout.SimpleLabelItem()
-			Me.layoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
 			CType(Me.layoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
 			Me.layoutControl1.SuspendLayout()
+			CType(Me.buttonEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.memoEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.textEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.buttonEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.layoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.layoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.layoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.layoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.layoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+			CType(Me.layoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.layoutControl2, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.layoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.simpleLabelItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.layoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
 			Me.SuspendLayout()
 			' 
 			' imageList1
@@ -92,6 +90,18 @@ Namespace DXSample
 			Me.layoutControl1.TabIndex = 0
 			Me.layoutControl1.Text = "layoutControl1"
 			' 
+			' buttonEdit1
+			' 
+			Me.buttonEdit1.Location = New System.Drawing.Point(66, 12)
+			Me.buttonEdit1.Name = "buttonEdit1"
+			Me.buttonEdit1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb((CInt((CByte(192)))), (CInt((CByte(192)))), (CInt((CByte(255)))))
+			Me.buttonEdit1.Properties.Appearance.Options.UseBackColor = True
+			Me.buttonEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() { New DevExpress.XtraEditors.Controls.EditorButton()})
+			Me.buttonEdit1.Properties.NullText = "First Name"
+			Me.buttonEdit1.Size = New System.Drawing.Size(183, 20)
+			Me.buttonEdit1.StyleController = Me.layoutControl1
+			Me.buttonEdit1.TabIndex = 5
+			' 
 			' memoEdit1
 			' 
 			Me.memoEdit1.Location = New System.Drawing.Point(66, 36)
@@ -99,13 +109,12 @@ Namespace DXSample
 			Me.memoEdit1.Size = New System.Drawing.Size(424, 303)
 			Me.memoEdit1.StyleController = Me.layoutControl1
 			Me.memoEdit1.TabIndex = 11
-			Me.memoEdit1.UseOptimizedRendering = True
 			' 
 			' textEdit2
 			' 
 			Me.textEdit2.Location = New System.Drawing.Point(307, 12)
 			Me.textEdit2.Name = "textEdit2"
-			Me.textEdit2.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb((CInt(Fix((CByte(192))))), (CInt(Fix((CByte(192))))), (CInt(Fix((CByte(255))))))
+			Me.textEdit2.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb((CInt((CByte(192)))), (CInt((CByte(192)))), (CInt((CByte(255)))))
 			Me.textEdit2.Properties.Appearance.Options.UseBackColor = True
 			Me.textEdit2.Properties.NullText = "Last Name"
 			Me.textEdit2.Size = New System.Drawing.Size(183, 20)
@@ -114,9 +123,9 @@ Namespace DXSample
 			' 
 			' simpleButton4
 			' 
-			Me.simpleButton4.Location = New System.Drawing.Point(253, 343)
+			Me.simpleButton4.Location = New System.Drawing.Point(246, 343)
 			Me.simpleButton4.Name = "simpleButton4"
-			Me.simpleButton4.Size = New System.Drawing.Size(237, 22)
+			Me.simpleButton4.Size = New System.Drawing.Size(244, 22)
 			Me.simpleButton4.StyleController = Me.layoutControl1
 			Me.simpleButton4.TabIndex = 9
 			Me.simpleButton4.Text = "Cancel"
@@ -125,33 +134,19 @@ Namespace DXSample
 			' 
 			Me.simpleButton3.Location = New System.Drawing.Point(12, 343)
 			Me.simpleButton3.Name = "simpleButton3"
-			Me.simpleButton3.Size = New System.Drawing.Size(237, 22)
+			Me.simpleButton3.Size = New System.Drawing.Size(230, 22)
 			Me.simpleButton3.StyleController = Me.layoutControl1
 			Me.simpleButton3.TabIndex = 8
 			Me.simpleButton3.Text = "OK"
-			' 
-			' buttonEdit1
-			' 
-			Me.buttonEdit1.Location = New System.Drawing.Point(66, 12)
-			Me.buttonEdit1.Name = "buttonEdit1"
-			Me.buttonEdit1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb((CInt(Fix((CByte(192))))), (CInt(Fix((CByte(192))))), (CInt(Fix((CByte(255))))))
-			Me.buttonEdit1.Properties.Appearance.Options.UseBackColor = True
-			Me.buttonEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() { New DevExpress.XtraEditors.Controls.EditorButton()})
-			Me.buttonEdit1.Properties.NullText = "First Name"
-			Me.buttonEdit1.Size = New System.Drawing.Size(183, 20)
-			Me.buttonEdit1.StyleController = Me.layoutControl1
-			Me.buttonEdit1.TabIndex = 5
 			' 
 			' layoutControlGroup1
 			' 
 			Me.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1"
 			Me.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True
 			Me.layoutControlGroup1.GroupBordersVisible = False
-			Me.layoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() { Me.layoutControlItem5, Me.layoutControlItem7, Me.layoutControlItem6, Me.layoutControlItem1, Me.layoutControlItem2})
-			Me.layoutControlGroup1.Location = New System.Drawing.Point(0, 0)
+			Me.layoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() { Me.layoutControlItem5, Me.layoutControlItem7, Me.layoutControlItem1, Me.layoutControlItem2, Me.layoutControlItem6})
 			Me.layoutControlGroup1.Name = "layoutControlGroup1"
 			Me.layoutControlGroup1.Size = New System.Drawing.Size(502, 377)
-			Me.layoutControlGroup1.Text = "layoutControlGroup1"
 			Me.layoutControlGroup1.TextVisible = False
 			' 
 			' layoutControlItem5
@@ -160,10 +155,8 @@ Namespace DXSample
 			Me.layoutControlItem5.CustomizationFormText = "layoutControlItem5"
 			Me.layoutControlItem5.Location = New System.Drawing.Point(0, 331)
 			Me.layoutControlItem5.Name = "layoutControlItem5"
-			Me.layoutControlItem5.Size = New System.Drawing.Size(241, 26)
-			Me.layoutControlItem5.Text = "layoutControlItem5"
+			Me.layoutControlItem5.Size = New System.Drawing.Size(234, 26)
 			Me.layoutControlItem5.TextSize = New System.Drawing.Size(0, 0)
-			Me.layoutControlItem5.TextToControlDistance = 0
 			Me.layoutControlItem5.TextVisible = False
 			' 
 			' layoutControlItem7
@@ -180,12 +173,10 @@ Namespace DXSample
 			' 
 			Me.layoutControlItem6.Control = Me.simpleButton4
 			Me.layoutControlItem6.CustomizationFormText = "layoutControlItem6"
-			Me.layoutControlItem6.Location = New System.Drawing.Point(241, 331)
+			Me.layoutControlItem6.Location = New System.Drawing.Point(234, 331)
 			Me.layoutControlItem6.Name = "layoutControlItem6"
-			Me.layoutControlItem6.Size = New System.Drawing.Size(241, 26)
-			Me.layoutControlItem6.Text = "layoutControlItem6"
+			Me.layoutControlItem6.Size = New System.Drawing.Size(248, 26)
 			Me.layoutControlItem6.TextSize = New System.Drawing.Size(0, 0)
-			Me.layoutControlItem6.TextToControlDistance = 0
 			Me.layoutControlItem6.TextVisible = False
 			' 
 			' layoutControlItem1
@@ -198,6 +189,16 @@ Namespace DXSample
 			Me.layoutControlItem1.Text = "Details"
 			Me.layoutControlItem1.TextSize = New System.Drawing.Size(51, 13)
 			' 
+			' layoutControlItem2
+			' 
+			Me.layoutControlItem2.Control = Me.buttonEdit1
+			Me.layoutControlItem2.CustomizationFormText = "First Name"
+			Me.layoutControlItem2.Location = New System.Drawing.Point(0, 0)
+			Me.layoutControlItem2.Name = "layoutControlItem2"
+			Me.layoutControlItem2.Size = New System.Drawing.Size(241, 24)
+			Me.layoutControlItem2.Text = "First Name"
+			Me.layoutControlItem2.TextSize = New System.Drawing.Size(51, 13)
+			' 
 			' simpleButton2
 			' 
 			Me.simpleButton2.Location = New System.Drawing.Point(643, 383)
@@ -205,7 +206,8 @@ Namespace DXSample
 			Me.simpleButton2.Size = New System.Drawing.Size(168, 22)
 			Me.simpleButton2.TabIndex = 7
 			Me.simpleButton2.Text = "Restore Layout"
-'			Me.simpleButton2.Click += New System.EventHandler(Me.OnRestoreLayoutButtonClick);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.simpleButton2.Click += new System.EventHandler(this.OnRestoreLayoutButtonClick);
 			' 
 			' simpleButton1
 			' 
@@ -214,7 +216,8 @@ Namespace DXSample
 			Me.simpleButton1.Size = New System.Drawing.Size(170, 22)
 			Me.simpleButton1.TabIndex = 6
 			Me.simpleButton1.Text = "Save Layout"
-'			Me.simpleButton1.Click += New System.EventHandler(Me.OnSaveLayoutButtonClick);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.simpleButton1.Click += new System.EventHandler(this.OnSaveLayoutButtonClick);
 			' 
 			' layoutControl2
 			' 
@@ -232,10 +235,8 @@ Namespace DXSample
 			Me.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True
 			Me.layoutControlGroup2.GroupBordersVisible = False
 			Me.layoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() { Me.simpleLabelItem1})
-			Me.layoutControlGroup2.Location = New System.Drawing.Point(0, 0)
 			Me.layoutControlGroup2.Name = "Root"
 			Me.layoutControlGroup2.Size = New System.Drawing.Size(408, 351)
-			Me.layoutControlGroup2.Text = "Root"
 			Me.layoutControlGroup2.TextVisible = False
 			' 
 			' simpleLabelItem1
@@ -247,16 +248,6 @@ Namespace DXSample
 			Me.simpleLabelItem1.Size = New System.Drawing.Size(388, 331)
 			Me.simpleLabelItem1.Text = "Empty Layout Control"
 			Me.simpleLabelItem1.TextSize = New System.Drawing.Size(104, 13)
-			' 
-			' layoutControlItem2
-			' 
-			Me.layoutControlItem2.Control = Me.buttonEdit1
-			Me.layoutControlItem2.CustomizationFormText = "First Name"
-			Me.layoutControlItem2.Location = New System.Drawing.Point(0, 0)
-			Me.layoutControlItem2.Name = "layoutControlItem2"
-			Me.layoutControlItem2.Size = New System.Drawing.Size(241, 24)
-			Me.layoutControlItem2.Text = "First Name"
-			Me.layoutControlItem2.TextSize = New System.Drawing.Size(51, 13)
 			' 
 			' Main
 			' 
@@ -274,18 +265,18 @@ Namespace DXSample
 			Me.Text = "Save LayoutControl with controls"
 			CType(Me.layoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
 			Me.layoutControl1.ResumeLayout(False)
+			CType(Me.buttonEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.memoEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.textEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.buttonEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.layoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.layoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.layoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.layoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.layoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
+			CType(Me.layoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.layoutControl2, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.layoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.simpleLabelItem1, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.layoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
 			Me.ResumeLayout(False)
 
 		End Sub

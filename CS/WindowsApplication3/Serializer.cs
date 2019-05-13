@@ -128,20 +128,25 @@ namespace CustomSerialization
 
 
         // Fields...
-        private Type _Type;
+        private string _type;
         private object _SerializableObject;
 
         [XtraSerializableProperty]
-        public Type Type
+        public string Type1
         {
-            get { return _Type; }
+            get { return _type; }
             set
             {
-                _Type = value;
+                _type = value;
                 try
                 {
                     if (_SerializableObject == null)
-                        _SerializableObject = Activator.CreateInstance(_Type);
+                    {
+                        int index = _type.LastIndexOf('.');
+                        var nameSpace = _type.Substring(0, index);
+                        var type = System.Type.GetType(_type + ", " + nameSpace);
+                        _SerializableObject = Activator.CreateInstance(type);
+                    }
                 }
                 catch { }
             }
@@ -154,7 +159,7 @@ namespace CustomSerialization
             set
             {
                 _SerializableObject = value;
-                _Type = _SerializableObject.GetType();
+                _type = _SerializableObject.GetType().ToString();
             }
         }
 

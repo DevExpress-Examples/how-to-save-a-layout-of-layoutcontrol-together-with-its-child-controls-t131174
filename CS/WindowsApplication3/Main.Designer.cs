@@ -28,36 +28,36 @@ namespace DXSample {
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList1
@@ -90,6 +90,19 @@ namespace DXSample {
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // buttonEdit1
+            // 
+            this.buttonEdit1.Location = new System.Drawing.Point(66, 12);
+            this.buttonEdit1.Name = "buttonEdit1";
+            this.buttonEdit1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.buttonEdit1.Properties.NullText = "First Name";
+            this.buttonEdit1.Size = new System.Drawing.Size(183, 20);
+            this.buttonEdit1.StyleController = this.layoutControl1;
+            this.buttonEdit1.TabIndex = 5;
+            // 
             // memoEdit1
             // 
             this.memoEdit1.Location = new System.Drawing.Point(66, 36);
@@ -97,7 +110,6 @@ namespace DXSample {
             this.memoEdit1.Size = new System.Drawing.Size(424, 303);
             this.memoEdit1.StyleController = this.layoutControl1;
             this.memoEdit1.TabIndex = 11;
-            this.memoEdit1.UseOptimizedRendering = true;
             // 
             // textEdit2
             // 
@@ -112,9 +124,9 @@ namespace DXSample {
             // 
             // simpleButton4
             // 
-            this.simpleButton4.Location = new System.Drawing.Point(253, 343);
+            this.simpleButton4.Location = new System.Drawing.Point(246, 343);
             this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(237, 22);
+            this.simpleButton4.Size = new System.Drawing.Size(244, 22);
             this.simpleButton4.StyleController = this.layoutControl1;
             this.simpleButton4.TabIndex = 9;
             this.simpleButton4.Text = "Cancel";
@@ -123,23 +135,10 @@ namespace DXSample {
             // 
             this.simpleButton3.Location = new System.Drawing.Point(12, 343);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(237, 22);
+            this.simpleButton3.Size = new System.Drawing.Size(230, 22);
             this.simpleButton3.StyleController = this.layoutControl1;
             this.simpleButton3.TabIndex = 8;
             this.simpleButton3.Text = "OK";
-            // 
-            // buttonEdit1
-            // 
-            this.buttonEdit1.Location = new System.Drawing.Point(66, 12);
-            this.buttonEdit1.Name = "buttonEdit1";
-            this.buttonEdit1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.buttonEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.buttonEdit1.Properties.NullText = "First Name";
-            this.buttonEdit1.Size = new System.Drawing.Size(183, 20);
-            this.buttonEdit1.StyleController = this.layoutControl1;
-            this.buttonEdit1.TabIndex = 5;
             // 
             // layoutControlGroup1
             // 
@@ -149,13 +148,11 @@ namespace DXSample {
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem5,
             this.layoutControlItem7,
-            this.layoutControlItem6,
             this.layoutControlItem1,
-            this.layoutControlItem2});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2,
+            this.layoutControlItem6});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(502, 377);
-            this.layoutControlGroup1.Text = "layoutControlGroup1";
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem5
@@ -164,10 +161,8 @@ namespace DXSample {
             this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 331);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(241, 26);
-            this.layoutControlItem5.Text = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(234, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextToControlDistance = 0;
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem7
@@ -184,12 +179,10 @@ namespace DXSample {
             // 
             this.layoutControlItem6.Control = this.simpleButton4;
             this.layoutControlItem6.CustomizationFormText = "layoutControlItem6";
-            this.layoutControlItem6.Location = new System.Drawing.Point(241, 331);
+            this.layoutControlItem6.Location = new System.Drawing.Point(234, 331);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(241, 26);
-            this.layoutControlItem6.Text = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(248, 26);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextToControlDistance = 0;
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem1
@@ -201,6 +194,16 @@ namespace DXSample {
             this.layoutControlItem1.Size = new System.Drawing.Size(482, 307);
             this.layoutControlItem1.Text = "Details";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(51, 13);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.buttonEdit1;
+            this.layoutControlItem2.CustomizationFormText = "First Name";
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(241, 24);
+            this.layoutControlItem2.Text = "First Name";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(51, 13);
             // 
             // simpleButton2
             // 
@@ -237,10 +240,8 @@ namespace DXSample {
             this.layoutControlGroup2.GroupBordersVisible = false;
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.simpleLabelItem1});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "Root";
             this.layoutControlGroup2.Size = new System.Drawing.Size(408, 351);
-            this.layoutControlGroup2.Text = "Root";
             this.layoutControlGroup2.TextVisible = false;
             // 
             // simpleLabelItem1
@@ -252,16 +253,6 @@ namespace DXSample {
             this.simpleLabelItem1.Size = new System.Drawing.Size(388, 331);
             this.simpleLabelItem1.Text = "Empty Layout Control";
             this.simpleLabelItem1.TextSize = new System.Drawing.Size(104, 13);
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.buttonEdit1;
-            this.layoutControlItem2.CustomizationFormText = "First Name";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(241, 24);
-            this.layoutControlItem2.Text = "First Name";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(51, 13);
             // 
             // Main
             // 
@@ -279,18 +270,18 @@ namespace DXSample {
             this.Text = "Save LayoutControl with controls";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
 
         }

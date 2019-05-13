@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Collections.Generic
 Imports System.ComponentModel
 Imports System.Data
@@ -18,12 +17,12 @@ Imports CustomSerialization
 Imports DevExpress.XtraGrid.Views.Grid.ViewInfo
 Imports DevExpress.Utils.Paint
 Imports DevExpress.XtraGrid.Views.Grid
-Imports DXSample.Properties
 
 
 Namespace DXSample
 	Partial Public Class Main
 		Inherits XtraForm
+
 		Public Sub New()
 			InitializeComponent()
 		End Sub

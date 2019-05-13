@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Collections.Generic
 Imports System.ComponentModel
 Imports System.Text
@@ -21,49 +20,49 @@ Imports DevExpress.Utils
 Namespace CustomSerialization
 
 	Public Module Serializer
-        Private appName As String = System.Reflection.Assembly.GetExecutingAssembly().FullName
-        Private serializer As XmlXtraSerializer = New MyXmlXtraSerializer()
-
-	
-        <System.Runtime.CompilerServices.Extension> _
-        Public Sub SaveLayoutExToXml(ByVal layoutControl As LayoutControl, ByVal filePath As String)
-            Try
-                Dim objects As New ObjectInfoCollection()
-                For Each ctrl As Control In layoutControl.Controls
-                    If layoutControl.GetItemByControl(ctrl) IsNot Nothing Then
-                        objects.Collection.Add(New ObjectInfo(ctrl))
-                    End If
-                Next ctrl
-                Dim filePathForControls As String = filePath.Replace(".xml", "Controls.xml")
-                layoutControl.SaveLayoutToXml(filePath)
-                serializer.SerializeObject(objects, filePathForControls, appName)
-            Catch exc As Exception
-                XtraMessageBox.Show(exc.Message)
-            End Try
-        End Sub
+		Private appName As String = System.Reflection.Assembly.GetExecutingAssembly().FullName
+		Private serializer As XmlXtraSerializer = New MyXmlXtraSerializer()
 
 
-        <System.Runtime.CompilerServices.Extension> _
-        Public Sub RestoreLayoutExFromXml(ByVal layoutControl As LayoutControl, ByVal filePath As String)
-            Try
-                Dim objects As New ObjectInfoCollection()
-                Dim filePathForControls As String = filePath.Replace(".xml", "Controls.xml")
-                serializer.DeserializeObject(objects, filePathForControls, appName)
-                For Each info As ObjectInfo In objects.Collection
-                    Dim ctrl As Control = TryCast(info.SerializableObject, Control)
-                    If ctrl IsNot Nothing Then
-                        Dim controls() As Control = layoutControl.Controls.Find(ctrl.Name, False)
-                        If controls.Length > 0 Then
-                            layoutControl.Controls.Remove(controls(0))
-                        End If
-                        layoutControl.Controls.Add(ctrl)
-                    End If
-                Next info
-                layoutControl.RestoreLayoutFromXml(filePath)
-            Catch exc As Exception
-                XtraMessageBox.Show(exc.Message)
-            End Try
-        End Sub
+		<System.Runtime.CompilerServices.Extension> _
+		Public Sub SaveLayoutExToXml(ByVal layoutControl As LayoutControl, ByVal filePath As String)
+			Try
+				Dim objects As New ObjectInfoCollection()
+				For Each ctrl As Control In layoutControl.Controls
+					If layoutControl.GetItemByControl(ctrl) IsNot Nothing Then
+						objects.Collection.Add(New ObjectInfo(ctrl))
+					End If
+				Next ctrl
+				Dim filePathForControls As String = filePath.Replace(".xml", "Controls.xml")
+				layoutControl.SaveLayoutToXml(filePath)
+				serializer.SerializeObject(objects, filePathForControls, appName)
+			Catch exc As Exception
+				XtraMessageBox.Show(exc.Message)
+			End Try
+		End Sub
+
+
+		<System.Runtime.CompilerServices.Extension> _
+		Public Sub RestoreLayoutExFromXml(ByVal layoutControl As LayoutControl, ByVal filePath As String)
+			Try
+				Dim objects As New ObjectInfoCollection()
+				Dim filePathForControls As String = filePath.Replace(".xml", "Controls.xml")
+				serializer.DeserializeObject(objects, filePathForControls, appName)
+				For Each info As ObjectInfo In objects.Collection
+					Dim ctrl As Control = TryCast(info.SerializableObject, Control)
+					If ctrl IsNot Nothing Then
+						Dim controls() As Control = layoutControl.Controls.Find(ctrl.Name, False)
+						If controls.Length > 0 Then
+							layoutControl.Controls.Remove(controls(0))
+						End If
+						layoutControl.Controls.Add(ctrl)
+					End If
+				Next info
+				layoutControl.RestoreLayoutFromXml(filePath)
+			Catch exc As Exception
+				XtraMessageBox.Show(exc.Message)
+			End Try
+		End Sub
 	End Module
 
 	Public Class MyXmlXtraSerializer
@@ -92,7 +91,7 @@ Namespace CustomSerialization
 		' Fields...
 		Private _Collection As List(Of ObjectInfo)
 
-		<XtraSerializableProperty(XtraSerializationVisibility.Collection, True)> _
+		<XtraSerializableProperty(XtraSerializationVisibility.Collection, True)>
 		Public Property Collection() As List(Of ObjectInfo)
 			Get
 				Return _Collection
@@ -102,14 +101,14 @@ Namespace CustomSerialization
 			End Set
 		End Property
 
-        Public Function CreateCollectionItem(ByVal propertyName As String, ByVal e As XtraItemEventArgs) As Object Implements IXtraSupportDeserializeCollectionItem.CreateCollectionItem
-            Dim info As New ObjectInfo()
-            Collection.Add(info)
-            Return info
-        End Function
+		Public Function CreateCollectionItem(ByVal propertyName As String, ByVal e As XtraItemEventArgs) As Object Implements IXtraSupportDeserializeCollectionItem.CreateCollectionItem
+			Dim info As New ObjectInfo()
+			Collection.Add(info)
+			Return info
+		End Function
 
-        Public Sub SetIndexCollectionItem(ByVal propertyName As String, ByVal e As XtraSetItemIndexEventArgs) Implements IXtraSupportDeserializeCollectionItem.SetIndexCollectionItem
-        End Sub
+		Public Sub SetIndexCollectionItem(ByVal propertyName As String, ByVal e As XtraSetItemIndexEventArgs) Implements IXtraSupportDeserializeCollectionItem.SetIndexCollectionItem
+		End Sub
 	End Class
 
 	Public Class ObjectInfo
@@ -122,37 +121,40 @@ Namespace CustomSerialization
 
 
 		' Fields...
-		Private _Type As Type
+		Private _type As String
 		Private _SerializableObject As Object
 
-		<XtraSerializableProperty> _
-		Public Property Type() As Type
+		<XtraSerializableProperty>
+		Public Property Type1() As String
 			Get
-				Return _Type
+				Return _type
 			End Get
-			Set(ByVal value As Type)
-				_Type = value
+			Set(ByVal value As String)
+				_type = value
 				Try
 					If _SerializableObject Is Nothing Then
-						_SerializableObject = Activator.CreateInstance(_Type)
+						Dim index As Integer = _type.LastIndexOf("."c)
+						Dim [nameSpace] = _type.Substring(0, index)
+						Dim type = System.Type.GetType(_type & ", " & [nameSpace])
+						_SerializableObject = Activator.CreateInstance(type)
 					End If
 				Catch
 				End Try
 			End Set
 		End Property
 
-		<XtraSerializableProperty(XtraSerializationVisibility.Content)> _
+		<XtraSerializableProperty(XtraSerializationVisibility.Content)>
 		Public Property SerializableObject() As Object
 			Get
 				Return _SerializableObject
 			End Get
 			Set(ByVal value As Object)
 				_SerializableObject = value
-				_Type = _SerializableObject.GetType()
+				_type = _SerializableObject.GetType().ToString()
 			End Set
 		End Property
 
-		<XtraSerializableProperty(2)> _
+		<XtraSerializableProperty(2)>
 		Public Property SerializableObjectName() As String
 			Get
 				Dim ctrl As Control = TryCast(SerializableObject, Control)
@@ -200,6 +202,7 @@ Namespace CustomSerialization
 
 	Public Class MyDeserializeHelper
 		Inherits DeserializeHelper
+
 		Public Sub New(ByVal rootObject As Object)
 			MyBase.New(rootObject)
 		End Sub

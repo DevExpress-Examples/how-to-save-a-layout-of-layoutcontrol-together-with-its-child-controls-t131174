@@ -17,7 +17,6 @@ using CustomSerialization;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.Utils.Paint;
 using DevExpress.XtraGrid.Views.Grid;
-using DXSample.Properties;
 
 
 namespace DXSample
